@@ -10,5 +10,7 @@ func main() {
 	conn := NewSqliteConnection("./toy.db")
 	defer conn.Close()
 
+	CreateArrestsTable(conn)
+
 	log.Println("ending...")
 }
