@@ -14,6 +14,6 @@ func NewSqliteConnection(database string) *sql.DB {
 	}
 
 	log.Println("note: connection to SQLite database established.")
-	
+
 	return db
 }
