@@ -12,5 +12,7 @@ func main() {
 
 	CreateArrestsTable(conn)
 
+	PopulateArrestsTable(conn)
+
 	log.Println("ending...")
 }
