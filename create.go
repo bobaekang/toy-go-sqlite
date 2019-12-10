@@ -5,8 +5,9 @@ import (
 	"log"
 )
 
+// CreateArrestsTable creates table Arrests in db if missing
 func CreateArrestsTable(db *sql.DB) {
-	if exist := CheckExistArrestsTable(db); !exist {
+	if exist := checkExistArrestsTable(db); !exist {
 		_, err := db.Exec("CREATE TABLE Arrests ( year integer, value integer )")
 		if err != nil {
 			log.Fatal(err)
@@ -16,7 +17,7 @@ func CreateArrestsTable(db *sql.DB) {
 	}
 }
 
-func CheckExistArrestsTable(db *sql.DB) (exist bool) {
+func checkExistArrestsTable(db *sql.DB) (exist bool) {
 	err := db.QueryRow("SELECT name FROM sqlite_master WHERE type='table' AND name='Arrests'")
 	return err != nil
 }

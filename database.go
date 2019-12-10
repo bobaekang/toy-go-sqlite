@@ -7,6 +7,7 @@ import (
 	_ "github.com/mattn/go-sqlite3"
 )
 
+// NewSqliteConnection establishes a Sqlite connection
 func NewSqliteConnection(database string) *sql.DB {
 	db, err := sql.Open("sqlite3", database)
 	if err != nil {
