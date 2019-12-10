@@ -14,5 +14,8 @@ func main() {
 
 	PopulateArrestsTable(conn)
 
+	arrests := FetchArrests(conn)
+	log.Println(arrests)
+
 	log.Println("ending...")
 }
