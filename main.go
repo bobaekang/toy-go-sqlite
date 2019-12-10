@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"log"
 )
 
@@ -15,7 +16,12 @@ func main() {
 	PopulateArrestsTable(conn)
 
 	arrests := FetchArrests(conn)
-	log.Println(arrests)
+
+	arrestsJSON, err := json.Marshal(arrests)
+	if err != nil {
+		log.Fatal(err)
+	}
+	log.Printf("Query result: %s\n", string(arrestsJSON))
 
 	log.Println("ending...")
 }
