@@ -18,9 +18,5 @@ func CreateArrestsTable(db *sql.DB) {
 
 func CheckExistArrestsTable(db *sql.DB) (exist bool) {
 	err := db.QueryRow("SELECT name FROM sqlite_master WHERE type='table' AND name='Arrests'")
-	if err != nil {
-		return false
-	} else {
-		return true
-	}
+	return err != nil
 }
