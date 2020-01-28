@@ -3,12 +3,14 @@ package main
 import (
 	"encoding/json"
 	"log"
+
+	"github.com/bobaekang/toy-go-sqlite/storage/sqlite"
 )
 
 func main() {
 	log.Println("starting...")
 
-	conn := NewSqliteConnection("./toy.db")
+	conn := sqlite3.NewSqliteConnection("./toy.db")
 	defer conn.Close()
 
 	CreateArrestsTable(conn)
