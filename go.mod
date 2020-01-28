@@ -1,4 +1,4 @@
-module bobaekang/toy-go-sqlite
+module github.com/bobaekang/toy-go-sqlite
 
 go 1.13
 
