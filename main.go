@@ -10,7 +10,7 @@ import (
 func main() {
 	log.Println("starting...")
 
-	conn := sqlite3.NewSqliteConnection("./toy.db")
+	conn := sqlite.NewSqliteConnection("./toy.db")
 	defer conn.Close()
 
 	CreateArrestsTable(conn)
